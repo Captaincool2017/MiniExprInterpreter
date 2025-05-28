@@ -8,14 +8,15 @@ A lightweight C++ interpreter for evaluating mathematical and bitwise expression
 
 ## ✨ Features
 
-- Basic arithmetic: `+`, `-`, `*`, `/`, `%`, `**` (power)
-- Bitwise operations: `&`, `|`, `^`, `~`, `<<`, `>>`
-- Parentheses for grouping: `(2 + 3) * 4`
-- Unary operators: `-`, `+`, `~`
-- Variable assignments and chained expressions: `x = y = 5`
-- Graceful error handling with informative messages
-- Modular architecture (Lexer, Parser, AST, Evaluator)
-- Unit tested using custom test suite
+- ✅ Interactive REPL: enter expressions and get immediate results
+- 🔢 Arithmetic: `+`, `-`, `*`, `/`, `%`, `**` (power)
+- 🧠 Bitwise operations: `&`, `|`, `^`, `~`, `<<`, `>>`
+- 🧮 Operator precedence and associativity handled properly
+- 🗃️ Variable assignment: `x = 5`, `y = x + 2`
+- 🔁 Chained assignment: `x = y = 10`
+- 🚫 Graceful error handling with meaningful messages
+- 🧱 Modular design: Lexer, Parser, AST, Evaluator, Interpreter
+- 🧪 Unit-tested core logic
 
 ## 📁 Directory Structure
 
@@ -49,22 +50,44 @@ Assignment test PASSED: x = 5 = 5
 All tests completed successfully.
 ```
 
+## 🖥️ Interactive REPL Usage
+
+After building, you can launch the REPL:
+
+```bash
+./build/interpreter
+```
+
+You'll enter a live session where you can type expressions:
+
+```plaintext
+> x = 4
+4
+> y = x * 2 + 3
+11
+> ~y
+-12
+> 
+```
+
+To quit, press `Enter` or press `Ctrl+D`.
+
 ## 🛠️ Build Instructions
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/MiniExprInterpreter.git
+git clone https://github.com/Captaincool2017/MiniExprInterpreter.git
 cd MiniExprInterpreter
 ```
 
-2. Build the project
+2. Build everything
 
 ```bash
 make
 ```
 
-3. Run (if interactive mode/main is added)
+3. Run the REPL
 
 ```bash
 ./build/interpreter
@@ -84,12 +107,12 @@ y = x + 3
 
 ## 🚧 Roadmap
 
-- [x] Arithmetic and bitwise parsing
-- [x] Variable assignment and memory
-- [x] Operator precedence and associativity
-- [x] REPL (Interactive Interpreter)
-- [ ] Function support (e.g., `sin(x)`, `sqrt(x)`)
-- [ ] Command-line file execution support
+- [x] Arithmetic and bitwise expression support
+- [x] Variable assignments and memory
+- [x] Interactive REPL
+- [ ] Function parsing: `sqrt(x)`, `pow(x, y)`
+- [ ] Command-line file execution: `./interpreter file.expr`
+- [ ] History and autocomplete in REPL
 
 ## 🐞 Known Issues
 
