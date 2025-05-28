@@ -1,78 +1,115 @@
-# Mini Expression Interpreter
+# 🧮 Mini Expression Interpreter
 
-A simple arithmetic expression interpreter written in modern C++ (C++17).  
-It supports:
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![C++](https://img.shields.io/badge/language-C++17-blue.svg)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 
-- **Integer and floating-point (double) numbers**
-- **Basic arithmetic operations**: `+`, `-`, `*`, `/`
-- **Proper expression parsing** with precedence
-- **Parentheses** for grouping
-- **Human-readable Abstract Syntax Tree (AST)** representation
+A lightweight C++ interpreter for evaluating mathematical and bitwise expressions with variable support. It parses, builds an abstract syntax tree (AST), and evaluates expressions with proper precedence and associativity rules.
 
----
+## ✨ Features
 
-## 🛠️ Project Structure
+- Basic arithmetic: `+`, `-`, `*`, `/`, `%`, `**` (power)
+- Bitwise operations: `&`, `|`, `^`, `~`, `<<`, `>>`
+- Parentheses for grouping: `(2 + 3) * 4`
+- Unary operators: `-`, `+`, `~`
+- Variable assignments and chained expressions: `x = y = 5`
+- Graceful error handling with informative messages
+- Modular architecture (Lexer, Parser, AST, Evaluator)
+- Unit tested using custom test suite
+
+## 📁 Directory Structure
 
 ```
-.
-├── include/        # Header files (Token.h, Lexer.h, Parser.h, AST.h)
-├── src/            # Source files (Token.cpp, Lexer.cpp, Parser.cpp, AST.cpp)
-├── main.cpp        # Entry point
-├── Makefile        # Build automation
-└── README.md       # You are here
+MiniExprInterpreter/
+├── include/          # Header files
+│   └── core/
+├── src/              # Implementation
+│   └── core/
+├── tests/            # Unit tests
+├── build/            # Compiled output
+├── Makefile          # Build and test automation
+├── LICENSE           # MIT License
+└── README.md         # Project documentation
 ```
 
----
+## 🧪 Running Tests
 
-## 🚀 Getting Started
+To compile and run all unit tests:
 
-### ✅ Prerequisites
+```bash
+make test
+```
 
-- C++17-compatible compiler (`g++`, `clang++`, etc.)
-- `make` utility (optional, for using the Makefile)
+If successful, output will show:
 
-### 🧱 Build
+```plaintext
+Test PASSED: "2 + 3 * 4" = 14
+Assignment test PASSED: x = 5 = 5
+...
+All tests completed successfully.
+```
+
+## 🛠️ Build Instructions
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/MiniExprInterpreter.git
+cd MiniExprInterpreter
+```
+
+2. Build the project
 
 ```bash
 make
 ```
 
-Binary will be placed in `build/interpreter`.
-
-### ▶️ Run
+3. Run (if interactive mode/main is added)
 
 ```bash
 ./build/interpreter
 ```
 
-Example REPL interaction:
+## 🧠 Example Expressions
 
+```plaintext
+1 + 2
+(3 + 4) * 2
+x = 5
+y = x + 3
+2 ** 3
+16 >> 2
+~5
 ```
-Enter an arithmetic expression (or blank to quit):
-> 3 + 4 * 2
-AST: (3 + (4 * 2))
-Result: 11
 
-> (1.5 + 2.5) * 2
-AST: ((1.5 + 2.5) * 2)
-Result: 8
-```
+## 🚧 Roadmap
 
----
+- [x] Arithmetic and bitwise parsing
+- [x] Variable assignment and memory
+- [x] Operator precedence and associativity
+- [ ] REPL (Interactive Interpreter)
+- [ ] Function support (e.g., `sin(x)`, `sqrt(x)`)
+- [ ] Command-line file execution support
 
-## 🧪 Example Test Cases
+## 🐞 Known Issues
 
-| Expression         | AST Output                     | Result |
-|--------------------|--------------------------------|--------|
-| `1 + 2`            | `(1 + 2)`                      | `3`    |
-| `4 * (3 - 1)`      | `(4 * (3 - 1))`                | `8`    |
-| `3.5 + 1.5`        | `(3.5 + 1.5)`                  | `5`    |
-| `10 / 4`           | `(10 / 4)`                     | `2.5`  |
-| `5 + 2 * 3`        | `(5 + (2 * 3))`                | `11`   |
-| `(5 + 2) * 3`      | `((5 + 2) * 3)`                | `21`   |
+- No support for floating-point bitwise operations
+- Unary plus has no effect but is parsed
+- Parser errors may not report full token context
 
----
+## 🤝 Contributing
 
-## 📄 License
+Pull requests are welcome. Please open an issue for any bug report, feature request, or major change proposal. Let's build it together!
 
-This project is open-source and available under the [MIT License](LICENSE).
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## 👨‍💻 Author
+
+Developed by Nishchay Pallav (Mike)  
+B.Tech ECE @ NITK, Robotics and Embedded Systems Enthusiast
+
+## 💬 Feedback
+
+Feel free to open issues or discussions. You can also drop suggestions or queries at your convenience. Let's make it better—together!
