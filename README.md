@@ -87,7 +87,7 @@ y = x + 3
 - [x] Arithmetic and bitwise parsing
 - [x] Variable assignment and memory
 - [x] Operator precedence and associativity
-- [ ] REPL (Interactive Interpreter)
+- [x] REPL (Interactive Interpreter)
 - [ ] Function support (e.g., `sin(x)`, `sqrt(x)`)
 - [ ] Command-line file execution support
 
