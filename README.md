@@ -108,7 +108,7 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Author
 
 Developed by Nishchay Pallav (Mike)  
-B.Tech ECE @ NITK, Robotics and Embedded Systems Enthusiast
+B.Tech ECE @ NITK, Embedded Systems, Electronics and Robotics Enthusiast
 
 ## 💬 Feedback
 
